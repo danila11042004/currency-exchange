@@ -1,0 +1,68 @@
+### GET /currencies
+GET http://localhost:8080/currency-exchange/currencies
+
+### GET /currency/*
+GET http://localhost:8080/currency-exchange/currency/RUB
+
+### GET /currency/*
+GET http://localhost:8080/currency-exchange/currency/asa
+
+### POST /currencies
+POST http://localhost:8080/currency-exchange/currencies
+Content-Type: application/x-www-form-urlencoded
+
+name=Canadian dollar&code=CAD&sign=C$
+
+### GET /exchangeRates
+GET http://localhost:8080/currency-exchange/exchangeRates
+
+### GET /exchangeRate/*
+GET http://localhost:8080/currency-exchange/exchangeRate/USDEUR
+
+### GET /exchangeRate/*
+GET http://localhost:8080/currency-exchange/exchangeRate/USDEU
+
+### GET /exchangeRate/*
+GET http://localhost:8080/currency-exchange/exchangeRate/USDRUB
+
+### POST /exchangeRates
+POST http://localhost:8080/currency-exchange/exchangeRates
+Content-Type: application/x-www-form-urlencoded
+
+baseCurrencyCode=USD&targetCurrencyCode=CAD&rate=200
+
+### POST /exchangeRates
+POST http://localhost:8080/currency-exchange/exchangeRates
+Content-Type: application/x-www-form-urlencoded
+
+baseCurrencyCode=USD&targetCurrencyCode=JPY&sad
+
+### POST /exchangeRates
+POST http://localhost:8080/currency-exchange/exchangeRates
+Content-Type: application/x-www-form-urlencoded
+
+baseCurrencyCode=USH&targetCurrencyCode=JPY&rate=156.59
+
+### PATCH /exchangeRate
+PATCH http://localhost:8080/currency-exchange/exchangeRate/USDJPY
+Content-Type: application/x-www-form-urlencoded
+
+rate=5
+
+### PATCH /exchangeRate
+PATCH http://localhost:8080/currency-exchange/exchangeRate/USDJPY
+Content-Type: application/x-www-form-urlencoded
+
+rate&rate=6
+
+### PATCH /exchangeRate
+PATCH http://localhost:8080/currency-exchange/exchangeRate/JPYUSD
+Content-Type: application/x-www-form-urlencoded
+
+rate=5
+
+### GET /exchange
+GET http://localhost:8080/currency-exchange/exchange?from=USD&to=EUR&amount=10
+
+### GET /exchangeRates
+GET http://localhost:8080/currency-exchange/exchangeRates

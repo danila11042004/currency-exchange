@@ -22,7 +22,7 @@ import java.util.Optional;
 
 @WebServlet("/exchangeRates")
 public class ExchangeRatesServlet extends HttpServlet {
-    private ExchangeRateService exchangeRateService = new ExchangeRateService();
+    private final ExchangeRateService exchangeRateService = new ExchangeRateService();
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

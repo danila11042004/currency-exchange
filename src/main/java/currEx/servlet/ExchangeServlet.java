@@ -17,7 +17,7 @@ import java.util.Optional;
 
 @WebServlet("/exchange")
 public class ExchangeServlet extends HttpServlet {
-    private ExchangeRateService exchangeRateService = new ExchangeRateService();
+    private final ExchangeRateService exchangeRateService = new ExchangeRateService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

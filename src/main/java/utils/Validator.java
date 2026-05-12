@@ -30,18 +30,7 @@ public class Validator {
         return Optional.empty();
     }
     public static Optional<BigDecimal> isAmount(String strAmount){
-        if(strAmount!=null){
-            try {
-                BigDecimal rate=new BigDecimal(strAmount);
-                if(rate.signum()>0){
-                    return Optional.of(rate);
-                }
-            }
-            catch (NumberFormatException e){
-                return Optional.empty();
-            }
-        }
-        return Optional.empty();
+        return isRate(strAmount);
     }
     public static Optional<String> isCodeInPath(String path){
         if(path != null&&path.length()==4){

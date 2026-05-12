@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 @WebServlet("/exchangeRate/*")
 public class ExchangeRateServlet extends MyServlet {
     private static final String RATE_PARAMETER = "rate";
-    private ExchangeRateService exchangeRateService = new ExchangeRateService();
+    private final ExchangeRateService exchangeRateService = new ExchangeRateService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

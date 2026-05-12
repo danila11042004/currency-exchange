@@ -13,8 +13,8 @@ import java.util.Map;
 @WebFilter(urlPatterns = {"/currencies", "/exchangeRates", "/exchange","/currency/*",
         "/exchangeRate/*"})
 public class ServletFilter implements Filter {
-    public static final String JSON_CONTENT_TYPE = "application/json";
-    public static final String ENCODING_TYPE = "UTF-8";
+    private static final String JSON_CONTENT_TYPE = "application/json";
+    private static final String ENCODING_TYPE = "UTF-8";
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse,
                          FilterChain filterChain) throws IOException, ServletException {
@@ -33,7 +33,6 @@ public class ServletFilter implements Filter {
     private void handleException(Exception e, HttpServletResponse response) {
         try {
             if(e instanceof DatabaseUnavailableException){
-                e.printStackTrace();
                 response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
                 JsonUtil.writeJson(response, Map.of("message", e.getMessage()));
             }

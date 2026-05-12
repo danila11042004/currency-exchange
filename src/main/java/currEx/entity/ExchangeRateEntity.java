@@ -14,15 +14,5 @@ public class ExchangeRateEntity {
     CurrencyEntity baseCurrency;
     CurrencyEntity targetCurrency;
     BigDecimal rate;
-
-    @Override
-    public boolean equals(Object object) {
-        if (!(object instanceof ExchangeRateEntity entity)) return false;
-        return Objects.equals(baseCurrency, entity.baseCurrency) && Objects.equals(targetCurrency, entity.targetCurrency);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(baseCurrency, targetCurrency);
-    }
+    
 }

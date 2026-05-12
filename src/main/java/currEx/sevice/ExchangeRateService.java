@@ -18,7 +18,7 @@ public class ExchangeRateService {
     private final ExchangeRateDao exchangeRateDao = new ExchangeRateDao();
     private final CurrencyDao currencyDao = new CurrencyDao();
     private final ExchangeCalculator exchangeCalculator = new ExchangeCalculator();
-    public static final String USD_CODE="USD";
+    private static final String USD_CODE="USD";
 
     public ExchangeResponseDto exchange(String baseCode, String targetCode, BigDecimal amount) {
 

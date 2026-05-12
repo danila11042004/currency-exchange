@@ -52,6 +52,7 @@ public class ExchangeRateServlet extends MyServlet {
         String targetCode = path.substring(4, 7);
         String body = request.getReader().lines().collect(Collectors.joining());
         BigDecimal rate = Validator.getParameter(body, RATE_PARAMETER);
+
         ExchangeRateRequestDto eRateRequestDto = new ExchangeRateRequestDto(baseCode, targetCode, rate);
         ExchangeRateResponseDto eRateResponseDto = exchangeRateService.updateRate(eRateRequestDto);
         response.setStatus(HttpServletResponse.SC_OK);

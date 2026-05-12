@@ -10,10 +10,10 @@ public class Validator {
         return code != null && code.matches("[A-Za-z]{3}");
     }
     public static boolean isName(String name){
-        return name != null && name.length()<=250;
+        return name != null && name.length()<=250&& !name.isEmpty();
     }
     public static boolean isSign(String sign){
-        return sign != null && sign.length()<=10;
+        return sign != null && sign.length()<=10 && !sign.isEmpty();
     }
     public static Optional<BigDecimal> isRate(String strRate){
         if(strRate!=null){
@@ -59,7 +59,10 @@ public class Validator {
                     try {
                         String value=pair.substring(disjunctiveIndex + 1);
                         if(!value.isEmpty()){
-                            return new BigDecimal(pair.substring(disjunctiveIndex + 1));
+                            BigDecimal rate=new BigDecimal(pair.substring(disjunctiveIndex + 1));
+                            if(rate.signum()>0){
+                                return rate;
+                            }
                         }
                     } catch (NumberFormatException e) {
                         throw new RequiredFieldMissingException("Отсутствует нужное поле формы");

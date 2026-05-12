@@ -33,6 +33,7 @@ public class ServletFilter implements Filter {
     private void handleException(Exception e, HttpServletResponse response) {
         try {
             if(e instanceof DatabaseUnavailableException){
+                e.getMessage();
                 response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
                 JsonUtil.writeJson(response, Map.of("message", e.getMessage()));
             }

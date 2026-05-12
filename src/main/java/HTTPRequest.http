@@ -11,7 +11,7 @@ GET http://localhost:8080/currency-exchange/currency/asa
 POST http://localhost:8080/currency-exchange/currencies
 Content-Type: application/x-www-form-urlencoded
 
-name=Canadian dollar&code=CAD&sign=C$
+name=Can
 
 ### GET /exchangeRates
 GET http://localhost:8080/currency-exchange/exchangeRates
@@ -47,7 +47,7 @@ baseCurrencyCode=USH&targetCurrencyCode=JPY&rate=156.59
 PATCH http://localhost:8080/currency-exchange/exchangeRate/USDJPY
 Content-Type: application/x-www-form-urlencoded
 
-rate=5
+rate=4
 
 ### PATCH /exchangeRate
 PATCH http://localhost:8080/currency-exchange/exchangeRate/USDJPY
